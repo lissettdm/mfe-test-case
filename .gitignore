@@ -1,3 +1,9 @@
 count-ce/node_modules
 count-ce/src
+
+timer-ce/node_modules
+timer-ce/src
+timer-ce/script
+
 mfe-custom-element/node_modules
+mfe-custom-element/build

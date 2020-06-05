@@ -7,3 +7,6 @@ timer-ce/script
 
 mfe-custom-element/node_modules
 mfe-custom-element/build
+
+notifications-ce/node_modules
+notifications-ce/build

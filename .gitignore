@@ -5,8 +5,8 @@ timer-ce/node_modules
 timer-ce/src
 timer-ce/script
 
-mfe-custom-element/node_modules
-mfe-custom-element/build
+mfe-web-components/node_modules
+mfe-web-components/build
 
 notifications-ce/node_modules
 notifications-ce/build

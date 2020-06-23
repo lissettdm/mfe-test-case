@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.App__header-title {
+  text-align: center;
+  color: #333;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.App__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0.2rem 1rem #949494;
+  padding: 1rem;
+  position: relative;
+}
+
+.card__close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+}
+
+.web-components {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.web-components .card {
+  margin-bottom: 2rem;
+}
+.card__header  h3 {
+  text-transform: uppercase;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.Timer {
+  padding: 3rem;
+  margin: 2.4rem 0;
+  border: 1px solid #929292;
+  box-shadow: .5rem 1rem 1rem #929292;
+  color: #333;
+  width: 60%;
+}

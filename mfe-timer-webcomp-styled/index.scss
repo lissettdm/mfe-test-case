@@ -1,0 +1,92 @@
+$color-primary: #55a630;
+$color-secondary: #80b918;
+$color-default: #007f5f;
+$color-white: #fff;
+$color-black: #333;
+
+.timer {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-secondary,
+    $color-primary
+  );
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 12rem;
+}
+
+.timer__value {
+  font-size: 2rem;
+  font-weight: 300;
+  color: $color-white;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  display: block;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    transform: translateY(0.2rem) scale(0.99);
+  }
+  &:hover {
+    outline: none;
+  }
+}
+
+.btn-default {
+  background-color: $color-white;
+  color: $color-default;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(92, 92, 92, 0.5);
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 40%;
+  background-color: $color-white;
+  min-height: 100px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0.3rem 1rem 1rem #929292;
+  justify-content: space-between;
+  padding: 1.8rem;
+
+  &__body {
+    padding: 1.8rem 0;
+  }
+  &__footer {
+    padding: 1.8rem 0;
+    .btn {
+      float: right;
+    }
+  }
+}

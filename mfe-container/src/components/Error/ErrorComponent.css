@@ -1,0 +1,6 @@
+.Error {
+    background-image: linear-gradient(to right bottom, rgb(230, 63, 63), rgb(240, 94, 94));
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: left;
+}

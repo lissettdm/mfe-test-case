@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import createHTMLElement from "react-create-custom-element";
 import style from "./index.scss";
 
-const Timer = ({ onUpdate, name }) => {
+const Timer = ({ onUpdate, timerName }) => {
   const [time, setTime] = useState(new Date());
   const [open, SetOpen] = useState(false);
 
@@ -26,7 +26,7 @@ const Timer = ({ onUpdate, name }) => {
   return (
     <div>
       <style>{style}</style>
-      <h3>{name}</h3>
+      <h3>{timerName}</h3>
       <div className="timer">
         <span className="timer__value">{time.toLocaleTimeString()}</span>
         <button type="button" className="btn btn-default" onClick={onClick}>
@@ -65,6 +65,6 @@ Timer.defaultProps = {
 
 export default createHTMLElement(Timer, {
   shadowDOM: true,
-  properties: ["name"],
+  properties: ["timerName"],
   customEvents: ["onUpdate"],
 });

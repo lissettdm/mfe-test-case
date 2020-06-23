@@ -4,7 +4,7 @@ import { Loading, ErrorComponent } from "..";
 
 const PATH = "http://localhost:8080/esm/htmlelement/index.js";
 
-const getContent = (content) => (
+const renderContent = (content) => (
   <div className="Timer">
     <div className="Timer__header">
       <h3 className="Timer__title">
@@ -22,15 +22,15 @@ const TimerWebComponent = () => {
   const { error, loading, data } = useDynamicImport(PATH, /** cache */ false);
 
   if (error) {
-    return getContent(<ErrorComponent description={error} />);
+    return renderContent(<ErrorComponent description={error} />);
   }
   if (loading) {
-    return getContent(<Loading />);
+    return renderContent(<Loading />);
   } else {
     if (!window.customElements.get("timer-ce")) {
       window.customElements.define("timer-ce", data);
     }
-    return getContent(<timer-ce></timer-ce>);
+    return renderContent(<timer-ce></timer-ce>);
   }
 };
 

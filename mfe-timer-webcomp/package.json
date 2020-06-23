@@ -32,7 +32,7 @@
     "@rollup/plugin-commonjs": "^13.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-create-custom-element": "^1.0.5",
+    "react-create-custom-element": "^1.0.6",
     "react-dom": "^16.13.1",
     "rollup-plugin-terser": "^6.1.0",
     "save-dev": "0.0.1-security"

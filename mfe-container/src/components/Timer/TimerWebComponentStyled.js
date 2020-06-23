@@ -32,7 +32,8 @@ const TimerWebComponent = () => {
   });
 
   const onUpdate = (event) => {
-    alert("Hey, soy tu padre y te escucho aunque seas una sombra, :)");
+    const { detail } = event;
+    alert(`Hey, te escucho, en el onUpdate me enviaste: ${detail}, :)`);
   };
 
   if (error) {
@@ -44,7 +45,15 @@ const TimerWebComponent = () => {
     if (!window.customElements.get("timer-ce-styled")) {
       window.customElements.define("timer-ce-styled", data.default);
     }
-    return renderContent(<timer-ce-styled id="timer-1" timerName={'Timer Name (propiedad pasada desde el padre, de momento solo strings)'} ref={ref}></timer-ce-styled>);
+    return renderContent(
+      <timer-ce-styled
+        id="timer-1"
+        timerName={
+          "Timer Name (propiedad pasada desde el padre, de momento solo strings)"
+        }
+        ref={ref}
+      ></timer-ce-styled>
+    );
   }
 };
 

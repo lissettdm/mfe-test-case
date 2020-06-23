@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import createHTMLElement from "../mfe-timer-webcomp-styled/node_modules/react-create-custom-element";
+import createHTMLElement from "react-create-custom-element";
 import "./index.scss";
 
 const Timer = ({ onUpdate, name }) => {

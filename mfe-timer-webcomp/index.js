@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+import createHTMLElement from 'react-create-custom-element';
 import "./index.scss";
 
 const Timer = () => {
@@ -30,13 +31,17 @@ const Timer = () => {
 };
 
 Timer.protoTypes = {
-  onUpdate: PropTypes.func,
-  name: PropTypes.string,
+  // onUpdate: PropTypes.func,
+  // name: PropTypes.string,
 };
 
 Timer.defaultProps = {
-  onUpdate: () => {},
-  name: "",
+  // onUpdate: () => {},
+  // name: "",
 };
 
-export default Timer;
+export default createHTMLElement(Timer, {
+  shadowDOM: true,
+  properties: ["timerName"],
+  customEvents: ["onUpdate"],
+});

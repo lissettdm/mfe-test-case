@@ -1,7 +1,5 @@
 import babel from "@rollup/plugin-babel";
-import replace from "@rollup/plugin-replace";
 import postcss from "rollup-plugin-postcss";
-import external from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import visualizer from "rollup-plugin-visualizer";
@@ -13,25 +11,24 @@ import pkg from "./package.json";
 
 const getPluginsConfig = (prod) => {
   const plugins = [
-    //external(),
-
     postcss({
       extract: false,
       use: ["sass"],
     }),
-    replace({
-      "process.env.NODE_ENV": JSON.stringify(
-        prod ? "production" : "development"
-      ),
-    }),
+    // replace({
+    //   "process.env.NODE_ENV": JSON.stringify(
+    //     prod ? "production" : "development"
+    //   ),
+    // }),
+
     babel({
       exclude: "node_modules/**",
     }),
     resolve(),
     commonjs(),
     externalGlobals({
-      'react': 'React',
-      'react-dom': 'reactDOM',
+      react: "React",
+      "react-dom": "ReactDOM",
     }),
     visualizer(),
     terser(), /** minified */
@@ -53,9 +50,7 @@ export default (CLIArgs) => {
       },
     ],
   };
+  bundle.external = pkg.peerDependencies;
   bundle.plugins = getPluginsConfig(prod, mini);
-  bundle.globals = {
-    react: "React",
-  };
   return bundle;
 };

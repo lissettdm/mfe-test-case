@@ -46,7 +46,7 @@ export default (CLIArgs) => {
         dir: pkg.module,
         format: "esm",
         sourcemap: true,
-      },
+      },  
     ],
   };
   bundle.plugins = getPluginsConfig(prod, mini);

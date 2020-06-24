@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import { TimerWebComponent, TimerWebComponentStyled } from "./components";
+import { TimerWebComponent, TimerWebComponentStyled, RouterWebComponent, RouterWebComponent2 } from "./components";
 
 const App = () => {
 
@@ -12,6 +12,8 @@ const App = () => {
       <div className="App__container">
         <TimerWebComponentStyled />
         <TimerWebComponent />
+        <RouterWebComponent />
+        <RouterWebComponent2 />
       </div>
     </div>
   );

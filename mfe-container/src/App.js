@@ -3,6 +3,7 @@ import "./App.css";
 import { TimerWebComponent, TimerWebComponentStyled } from "./components";
 
 const App = () => {
+  console.log(window.React)
 
   return (
     <div className="App">

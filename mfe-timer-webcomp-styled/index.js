@@ -68,3 +68,5 @@ export default createHTMLElement(Timer, {
   properties: ["timerName"],
   customEvents: ["onUpdate"],
 });
+
+

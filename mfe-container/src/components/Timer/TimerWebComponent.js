@@ -28,7 +28,7 @@ const TimerWebComponent = () => {
     return renderContent(<Loading />);
   } else {
     if (!window.customElements.get("timer-ce")) {
-      window.customElements.define("timer-ce", data);
+      window.customElements.define("timer-ce", data.default);
     }
     return renderContent(<timer-ce></timer-ce>);
   }

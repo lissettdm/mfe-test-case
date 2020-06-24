@@ -4,16 +4,17 @@ import postcss from "rollup-plugin-postcss";
 import external from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import visualizer from 'rollup-plugin-visualizer';
+import visualizer from "rollup-plugin-visualizer";
+import externalGlobals from "rollup-plugin-external-globals";
 
-// import { terser } from "rollup-plugin-terser";
-
+import { terser } from "rollup-plugin-terser";
 
 import pkg from "./package.json";
 
 const getPluginsConfig = (prod) => {
   const plugins = [
-    external(),
+    //external(),
+
     postcss({
       extract: false,
       use: ["sass"],
@@ -23,17 +24,17 @@ const getPluginsConfig = (prod) => {
         prod ? "production" : "development"
       ),
     }),
-    // external({
-    //   includeDependencies: true,
-    // }),
     babel({
       exclude: "node_modules/**",
     }),
     resolve(),
     commonjs(),
-
-    visualizer()
-    // terser(), /** minified */
+    externalGlobals({
+      'react': 'React',
+      'react-dom': 'reactDOM',
+    }),
+    visualizer(),
+    terser(), /** minified */
   ];
 
   return plugins;
@@ -53,5 +54,8 @@ export default (CLIArgs) => {
     ],
   };
   bundle.plugins = getPluginsConfig(prod, mini);
+  bundle.globals = {
+    react: "React",
+  };
   return bundle;
 };

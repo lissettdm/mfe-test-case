@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import createHTMLElement from "react-create-custom-element";
 import "./index.scss";
 
-const Timer = ({ onUpdate, name }) => {
+const Timer = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -40,4 +39,4 @@ Timer.defaultProps = {
   name: "",
 };
 
-export default createHTMLElement(Timer, { shadowDOM: true });
+export default Timer;

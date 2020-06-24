@@ -6,7 +6,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import visualizer from 'rollup-plugin-visualizer';
 
-// import { terser } from "rollup-plugin-terser";
+import { terser } from "rollup-plugin-terser";
 
 
 import pkg from "./package.json";
@@ -29,8 +29,8 @@ const getPluginsConfig = (prod) => {
     resolve(),
     commonjs(),
 
-    visualizer()
-    // terser(), /** minified */
+    visualizer(),
+    terser(), /** minified */
   ];
 
   return plugins;

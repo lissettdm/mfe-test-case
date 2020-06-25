@@ -11,7 +11,7 @@ const renderContent = (content) => (
         {"Importado como HTMLElement dentro de un shadowDOM"}
       </h3>
       <h5 className="Timer__title">
-        Comportamiento de Router
+        Comportamiento de Router 2
       </h5>
     </div>
     <div className="Timer__content">{content}</div>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import PropTypes from "prop-types";
-import createHTMLElement from 'react-create-custom-element';
-import "./index.scss";
+import PropTypes from "prop-types";
+import createHTMLElement from "react-create-custom-element";
+import style from "./index.scss";
 
-const Timer = () => {
+const Timer = ({ name, onUpdate }) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -14,12 +14,12 @@ const Timer = () => {
   });
 
   const onClick = () => {
-    console.log("update");
+    onUpdate();
   };
 
   return (
     <div>
-      {/* <link rel="stylesheet" href={STYLE_URL}></link> */}
+      <style>{style}</style>
       <div className="timer">
         <span className="timer__value">{time.toLocaleTimeString()}</span>
         <button type="button" className="timer__btn" onClick={onClick}>
@@ -31,17 +31,19 @@ const Timer = () => {
 };
 
 Timer.protoTypes = {
-  // onUpdate: PropTypes.func,
-  // name: PropTypes.string,
+  onUpdate: PropTypes.func,
+  name: PropTypes.string,
 };
 
 Timer.defaultProps = {
-  // onUpdate: () => {},
-  // name: "",
+  onUpdate: () => {},
+  name: "",
 };
 
-export default createHTMLElement(Timer, {
-  shadowDOM: true,
-  properties: ["timerName"],
-  customEvents: ["onUpdate"],
-});
+// export default createHTMLElement(Timer, {
+//   shadowDOM: true,
+//   properties: ["timerName"],
+//   customEvents: ["onUpdate"],
+// });
+
+export default Timer;

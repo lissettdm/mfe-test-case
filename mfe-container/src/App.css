@@ -28,9 +28,16 @@
 
 .App__container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.App__sidebar {
+  flex-basis: 25%;
+  padding: 0 1rem;
+}
+
+.App__routes {
+  flex-grow: 1;
 }
 
 .card {
@@ -75,5 +82,6 @@
   border: 1px solid #929292;
   box-shadow: .5rem 1rem 1rem #929292;
   color: #333;
-  width: 60%;
+  border-radius: .2rem;
+  background-color: #fff;
 }

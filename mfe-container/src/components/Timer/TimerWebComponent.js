@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useDynamicImport } from "../../hooks";
 import { Loading, ErrorComponent } from "..";
+import ShadowContainer from "react-shadow-portal";
 
 const PATH = "http://localhost:8080/esm/htmlelement/index.js";
 
@@ -8,10 +9,13 @@ const renderContent = (content) => (
   <div className="Timer">
     <div className="Timer__header">
       <h3 className="Timer__title">
-        {"Importado como HTMLElement con peerDependencies React, ReactDOM"}
+        {
+          "Importado como un componente de React con peerDependencies React, ReactDOM y PropTypes"
+        }
       </h3>
       <h5 className="Timer__title">
-        Si se copia el contenido del fichero en un fichero local y se importa desde la ruta local, funciona sin problemas
+        Al importarse el componente se inserta dentro de un shadow DOM
+        utilizando la lib react-shadow-portal
       </h5>
     </div>
     <div className="Timer__content">{content}</div>
@@ -21,16 +25,21 @@ const renderContent = (content) => (
 const TimerWebComponent = () => {
   const { error, loading, data } = useDynamicImport(PATH, /** cache */ false);
 
+  const onUpdate = () => {
+    alert("Presionaste Actualizar");
+  };
+
   if (error) {
     return renderContent(<ErrorComponent description={error} />);
   }
   if (loading) {
     return renderContent(<Loading />);
   } else {
-    if (!window.customElements.get("timer-ce")) {
-      window.customElements.define("timer-ce", data.default);
-    }
-    return renderContent(<timer-ce></timer-ce>);
+    return renderContent(
+      <ShadowContainer.section>
+        <data.default onUpdate={onUpdate}></data.default>
+      </ShadowContainer.section>
+    );
   }
 };
 

@@ -134,7 +134,9 @@ module.exports = function(webpackEnv) {
     bail: isEnvProduction,
     externals: {
       'react': 'React', /** added */
-      'react-dom': 'ReactDOM' /** added */
+      'react-dom': 'ReactDOM', /** added */
+      'prop-types': 'PropTypes' /** added */
+
     },
     devtool: isEnvProduction
       ? shouldUseSourceMap
@@ -295,6 +297,7 @@ module.exports = function(webpackEnv) {
       alias: {
         'react': 'react', /** added */
         'react-dom': 'react-dom', /** added */
+        'prop-types': 'prop-types', /** added */
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',

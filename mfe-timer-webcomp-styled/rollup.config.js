@@ -15,7 +15,7 @@ const getPluginsConfig = (prod) => {
   const plugins = [
     external(),
     postcss({
-      extract: false,
+      inject: false,
       use: ["sass"],
     }),
     replace({

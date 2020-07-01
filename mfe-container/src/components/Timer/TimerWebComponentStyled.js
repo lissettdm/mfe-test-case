@@ -27,7 +27,9 @@ const TimerWebComponent = () => {
       ref.current.shadowRoot.addEventListener("onUpdate", onUpdate);
     }
     return () => {
-      ref.current.shadowRoot.removeEventListener("onUpdate", onUpdate);
+      if (ref.current) {
+        ref.current.shadowRoot.removeEventListener("onUpdate", onUpdate);
+      }
     };
   });
 

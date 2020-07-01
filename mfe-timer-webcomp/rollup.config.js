@@ -12,7 +12,7 @@ import pkg from "./package.json";
 const getPluginsConfig = (prod) => {
   const plugins = [
     postcss({
-      extract: false,
+      inject:false,
       use: ["sass"],
     }),
     // replace({

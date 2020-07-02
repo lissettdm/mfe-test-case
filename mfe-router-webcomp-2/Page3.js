@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Page2 = (props) => {
+const Page3 = (props) => {
   console.log(props);
   return (
     <div>
-      Diego Pagina 2
+      Pedro Pagina 3
     </div>
   )
 }
 
-export default Page2
+export default Page3

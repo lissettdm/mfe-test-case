@@ -3,6 +3,7 @@ import { BrowserRouter, Route, NavLink } from "react-router-dom";
 import createHTMLElement from "react-create-custom-element";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
+import Page3 from "./Page3";
 import style from "./index.scss";
 
 const RouterApp2 = () => {
@@ -17,9 +18,13 @@ const RouterApp2 = () => {
           <li>
             <NavLink to="/page2">Pagina 2</NavLink>
           </li>
+          <li>
+            <NavLink to="/page3">Pagina 3</NavLink>
+          </li>
         </ul>
         <Route exact path="/page1" component={Page1} />
         <Route exact path="/page2" render={Page2} />
+        <Route exact path="/page3" render={Page3} />
       </>
     </BrowserRouter>
   );

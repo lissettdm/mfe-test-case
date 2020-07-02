@@ -4,7 +4,7 @@ const Page2 = (props) => {
   console.log(props);
   return (
     <div>
-      Pagina 2
+      Luis Pagina 2
     </div>
   )
 }

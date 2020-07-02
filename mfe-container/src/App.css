@@ -82,4 +82,7 @@
   border: 1px solid #929292;
   box-shadow: .5rem 1rem 1rem #929292;
   color: #333;
+  border-radius: .2rem;
+  background-color: #fff;
 }
+
